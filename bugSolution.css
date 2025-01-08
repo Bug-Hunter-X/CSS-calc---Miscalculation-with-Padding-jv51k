@@ -1,0 +1,24 @@
+To solve this, ensure you account for the padding in your `calc()` calculation.  Alternatively, you can use `box-sizing: border-box;` on the parent element. This changes the `100%` calculation to include padding and border in the calculation.
+
+```css
+/* Solution using box-sizing */
+.container {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.element {
+  width: calc(100% - 10px);
+  background-color: lightblue;
+}
+
+/* Solution adding padding to calculation */
+.container2 {
+  padding: 10px;
+}
+
+.element2 {
+  width: calc(100% - 20px); /* 10px padding on both sides*/
+  background-color: lightgreen;
+}
+```
